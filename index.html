@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en" class="h-full">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="/src/output.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tsk</title>
+        <script type="module" src="/src/main.ts" defer></script>
+    </head>
+    <body class="h-full flex flex-col p-4">
+        <div class="flex justify-center">
+            <div class="w-full max-w-md">
+                <div class="relative">
+                    <label for="Search" class="sr-only"> Search </label>
+
+                    <input
+                        type="text"
+                        id="searchbox"
+                        placeholder="Search for..."
+                        class="w-full rounded-md border-gray-200 py-2.5 pe-10 shadow-sm sm:text-sm"
+                    />
+
+                    <span
+                        class="absolute inset-y-0 end-0 grid w-10 place-content-center"
+                    >
+                        <button
+                            type="button"
+                            class="text-gray-600 hover:text-gray-700"
+                        >
+                            <span class="sr-only">Search</span>
+
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                class="size-4"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                                />
+                            </svg>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div
+            class="flex-grow flex flex-col overflow-hidden rounded-lg border border-gray-200 m-2 outline outline-gray-700"
+        >
+            <div class="flex-grow overflow-auto">
+                <table
+                    id="process_table"
+                    class="w-full divide-y-2 divide-gray-200 bg-white text-sm border-collapse"
+                >
+                    <thead class="sticky top-0 bg-gray-100 z-10">
+                        <tr>
+                            <th
+                                class="whitespace-nowrap px-4 py-2 font-medium text-gray-900"
+                            >
+                                <button id="pid_sort">PID</button>
+                            </th>
+                            <th
+                                class="whitespace-nowrap px-4 py-2 font-medium text-gray-900"
+                            >
+                                <button id="user_sort">User</button>
+                            </th>
+                            <th
+                                class="whitespace-nowrap px-4 py-2 font-medium text-gray-900"
+                            >
+                                <button id="name_sort">Name</button>
+                            </th>
+                            <th
+                                class="whitespace-nowrap px-4 py-2 font-medium text-gray-900"
+                            >
+                                <button id="parent_sort">Parent</button>
+                            </th>
+                            <th
+                                class="whitespace-nowrap px-4 py-2 font-medium text-gray-900"
+                            >
+                                <button id="cpu_sort">CPU (%)</button>
+                            </th>
+                            <th
+                                class="whitespace-nowrap px-4 py-2 font-medium text-gray-900"
+                            >
+                                <button id="memory_sort">Memory (MB)</button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody
+                        id="process_table_data"
+                        class="divide-y divide-gray-200"
+                    >
+                        <tr>
+                            <td
+                                class="whitespace-nowrap px-4 py-2 font-medium text-gray-900"
+                            >
+                                Loading...
+                            </td>
+                            <td
+                                class="whitespace-nowrap px-4 py-2 text-gray-700"
+                            >
+                                Loading...
+                            </td>
+                            <td
+                                class="whitespace-nowrap px-4 py-2 text-gray-700"
+                            >
+                                Loading...
+                            </td>
+                            <td
+                                class="whitespace-nowrap px-4 py-2 text-gray-700"
+                            >
+                                Loading...
+                            </td>
+                            <td
+                                class="whitespace-nowrap px-4 py-2 text-gray-700"
+                            >
+                                Loading...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="context_menu" class="hidden absolute">
+            <ul class="menu flex flex-col rounded-md shadow-xl overflow-hidden">
+                <li id="kill" class="context-menu-item">Kill Process</li>
+            </ul>
+        </div>
+    </body>
+</html>

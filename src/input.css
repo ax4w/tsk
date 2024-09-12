@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .context-menu-item {
+        @apply cursor-pointer bg-white dark:bg-gray-800 hover:bg-gray-200 transition-all ease-linear dark:hover:bg-gray-800/50 p-4 w-full h-full text-gray-800 dark:text-gray-200 relative;
+    }
+}
+
+.selected {
+    background-color: red;
+}
+
+.table_hover {
+    background-color: bg-stone-500;
+}
